@@ -162,6 +162,11 @@ namespace QUANLYCUAHANG
                 {
                     tabControl1.SelectedTab = tabKhachhang;
                 }
+                if (e.Node.Text == "PHIẾU XUẤT")
+                {
+                    Form f8 = new FPhieuXuat();
+                    HienthiForm(f8, tp);
+                }    
             }
         }
 

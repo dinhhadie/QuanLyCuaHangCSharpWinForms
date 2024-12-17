@@ -162,6 +162,12 @@
     <Compile Include="Forms\FPhieuNhap.Designer.cs">
       <DependentUpon>FPhieuNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FPhieuXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FPhieuXuat.Designer.cs">
+      <DependentUpon>FPhieuXuat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\PHIEUNHAP.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -207,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FPhieuNhap.resx">
       <DependentUpon>FPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FPhieuXuat.resx">
+      <DependentUpon>FPhieuXuat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PhieuNhap.rdlc" />
     <EmbeddedResource Include="HoaDon.rdlc" />
