@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace QUANLYCUAHANG.Controls
 {
-    public partial class UC_NhaCungCap : UserControl
+    public partial class UC_NhapHang : UserControl
     {
-        public UC_NhaCungCap()
+        public UC_NhapHang()
         {
             InitializeComponent();
+            chart1.DataSource = Global.LoadDL("select mahh, tenhh from hanghoa");
+            
         }
     }
 }

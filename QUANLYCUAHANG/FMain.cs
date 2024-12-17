@@ -294,16 +294,7 @@ namespace QUANLYCUAHANG
         }
 
 
-        private void uiListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            UC_NhaCungCap ncc = new UC_NhaCungCap();
-            int i = uiListBox1.SelectedIndex;
-            if (i == 0)
-            {
-                uiSplitContainer1.Panel2.Controls.Add(ncc);
-            }
-        }
-
+       
 
         //Button đăng xuất form chính
         private void btnLogout_Click(object sender, EventArgs e)
@@ -812,19 +803,19 @@ namespace QUANLYCUAHANG
             txtMaNV.Text = Global.manv;
         }
 
+        private void ListBCTK_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UC_NhapHang UCNH = new UC_NhapHang();
+            int i = ListBCTK.SelectedIndex;
+            if (i == 0)
+            {
+                uiSplitContainer1.Panel1.Controls.Add(UCNH);
+            } 
+                
+        }
 
-        //Phiếu nhập 
-        /*
-         *Ngày tháng năm
-         *Họ tên nhà cung cấp
-         *Địa chỉ, SĐT NCC (nên có)
-         *Mã nhân viên
-         *Mã phiếu nhập
-         *STT - Mã hàng hóa - Tên hàng hóa - Số lượng - Đơn giá - Chiết khấu (nếu có) - Thành tiền
-         *=> Tính tổng tiền
-         *Ngày... (cắt date từ chuỗi ngày nhập), tháng....(cắt month), năm...(cắt year ra)
-         *Người lập phiếu (Tên NV), Người giao hàng (ký + họ tên) 
-         */
+
+
         //Phiếu xuất
         /*
          * Ngày tháng năm

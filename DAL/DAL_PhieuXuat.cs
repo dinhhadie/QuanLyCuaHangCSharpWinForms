@@ -32,7 +32,7 @@ namespace DAL
         {
             if (!Check(px.MaPX))
             {
-                string sql = "INSERT INTO PHIEUXUAT VALUES (@mapx, @manv, @ngayxuat, @makh, @trangthai";
+                string sql = "INSERT INTO PHIEUXUAT VALUES (@mapx, @manv, @ngayxuat, @makh, @trangthai)";
                 using (SqlCommand cmd = new SqlCommand(sql))
                 {
                     cmd.CommandType = CommandType.Text;
