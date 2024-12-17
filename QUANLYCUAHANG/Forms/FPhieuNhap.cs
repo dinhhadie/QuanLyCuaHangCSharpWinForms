@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace QUANLYCUAHANG.Forms
 {
@@ -24,9 +25,12 @@ namespace QUANLYCUAHANG.Forms
             cboMaNCC.DataSource = bus.Load("SELECT MANCC, TENNCC FROM NHACUNGCAP");
             cboMaNCC.DisplayMember = "TENNCC";
             cboMaNCC.ValueMember = "MANCC";
+            cboMaPN.DataSource = bus.Load("SELECT * FROM PHIEUNHAP");
+            cboMaPN.DisplayMember = "MAPN";
             Global.manv = txtMaNV.Text;
             dgvPhieuNhap.DataSource = bus.Load("SELECT * FROM PHIEUNHAP");
             dgvChiTietPhieuNhap.DataSource = bus.Load("SELECT * FROM CHITIETPHIEUNHAP");
+            this.reportViewer1.RefreshReport();
         }
 
         private void btnThemPhieuNhap_Click(object sender, EventArgs e)
@@ -78,6 +82,31 @@ namespace QUANLYCUAHANG.Forms
             txtSoLuong.Text = dgvChiTietPhieuNhap.Rows[i].Cells[2].Value.ToString();
             txtDonGia.Text = dgvChiTietPhieuNhap.Rows[i].Cells[3].Value.ToString();
             txtChietKhau.Text = dgvChiTietPhieuNhap.Rows[i].Cells[4].Value.ToString() ?? null;
+        }
+
+        private void BtnInPhieuNhap_Click(object sender, EventArgs e)
+        {
+            string sql = @"SELECT TENNCC, NHACUNGCAP.DIACHI, DIENTHOAI, PHIEUNHAP.MANV, TENNV, PHIEUNHAP.MAPN, NGAYNHAP, CHITIETPHIEUNHAP.MAHH,  TENHH, SLUONG, DGIA, SLUONG * DGIA AS THANHTIEN, CHIETKHAU, TONGPHAITRA
+            FROM NHACUNGCAP, PHIEUNHAP, CHITIETPHIEUNHAP, HANGHOA, NHANVIEN
+            WHERE NHACUNGCAP.MANCC = PHIEUNHAP.MANCC
+            AND PHIEUNHAP.MAPN = CHITIETPHIEUNHAP.MAPN
+            AND CHITIETPHIEUNHAP.MAHH = HANGHOA.MAHH
+            AND PHIEUNHAP.MANV = NHANVIEN.MANV
+            AND PHIEUNHAP.MAPN = '" + cboMaPN.Text + "'";
+            DataTable dt = bus.Load(sql);
+            reportViewer1.ProcessingMode = Microsoft.Reporting.WinForms.ProcessingMode.Local;
+
+            reportViewer1.LocalReport.ReportPath = "D:\\Windows Form\\QLCH\\QUANLYCUAHANG\\Forms\\PhieuNhap.rdlc";
+            if (dt.Rows.Count > 0)
+            {
+                ReportDataSource rds = new ReportDataSource();
+                rds.Name = "PHIEUNHAP";
+                rds.Value = dt;
+                reportViewer1.LocalReport.DataSources.Clear();
+                reportViewer1.LocalReport.DataSources.Add(rds);
+                reportViewer1.RefreshReport();
+            }
+            else MessageBox.Show("Không có dữ liệu");
         }
     }
 }

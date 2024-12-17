@@ -162,6 +162,11 @@
     <Compile Include="Forms\FPhieuNhap.Designer.cs">
       <DependentUpon>FPhieuNhap.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\PHIEUNHAP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PHIEUNHAP.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="HOADON.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -203,6 +208,7 @@
     <EmbeddedResource Include="Forms\FPhieuNhap.resx">
       <DependentUpon>FPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PhieuNhap.rdlc" />
     <EmbeddedResource Include="HoaDon.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -215,6 +221,17 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.manifest" />
+    <None Include="Forms\PHIEUNHAP.xsc">
+      <DependentUpon>PHIEUNHAP.xsd</DependentUpon>
+    </None>
+    <None Include="Forms\PHIEUNHAP.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PHIEUNHAP.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Forms\PHIEUNHAP.xss">
+      <DependentUpon>PHIEUNHAP.xsd</DependentUpon>
+    </None>
     <None Include="HOADON.xsc">
       <DependentUpon>HOADON.xsd</DependentUpon>
     </None>

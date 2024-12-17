@@ -66,6 +66,9 @@
             this.cboMaNCC = new Sunny.UI.UIComboBox();
             this.txtMaNV = new Sunny.UI.UITextBox();
             this.txtMaPN1 = new Sunny.UI.UITextBox();
+            this.cboMaPN = new Sunny.UI.UIComboBox();
+            this.BtnInPhieuNhap = new Sunny.UI.UIButton();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.uiGroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietPhieuNhap)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhieuNhap)).BeginInit();
@@ -73,6 +76,9 @@
             // 
             // uiGroupBox1
             // 
+            this.uiGroupBox1.Controls.Add(this.reportViewer1);
+            this.uiGroupBox1.Controls.Add(this.BtnInPhieuNhap);
+            this.uiGroupBox1.Controls.Add(this.cboMaPN);
             this.uiGroupBox1.Controls.Add(this.btnThemPhieuNhap);
             this.uiGroupBox1.Controls.Add(this.dgvChiTietPhieuNhap);
             this.uiGroupBox1.Controls.Add(this.cboMaHH);
@@ -107,7 +113,7 @@
             this.uiGroupBox1.MinimumSize = new System.Drawing.Size(1, 1);
             this.uiGroupBox1.Name = "uiGroupBox1";
             this.uiGroupBox1.Padding = new System.Windows.Forms.Padding(0, 32, 0, 0);
-            this.uiGroupBox1.Size = new System.Drawing.Size(1308, 726);
+            this.uiGroupBox1.Size = new System.Drawing.Size(1501, 765);
             this.uiGroupBox1.TabIndex = 0;
             this.uiGroupBox1.Text = "Phiếu nhập";
             this.uiGroupBox1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
@@ -116,10 +122,10 @@
             // 
             this.btnThemPhieuNhap.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnThemPhieuNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnThemPhieuNhap.Location = new System.Drawing.Point(629, 183);
+            this.btnThemPhieuNhap.Location = new System.Drawing.Point(536, 191);
             this.btnThemPhieuNhap.MinimumSize = new System.Drawing.Size(1, 1);
             this.btnThemPhieuNhap.Name = "btnThemPhieuNhap";
-            this.btnThemPhieuNhap.Size = new System.Drawing.Size(100, 35);
+            this.btnThemPhieuNhap.Size = new System.Drawing.Size(100, 45);
             this.btnThemPhieuNhap.TabIndex = 21;
             this.btnThemPhieuNhap.Text = "Thêm";
             this.btnThemPhieuNhap.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
@@ -151,7 +157,7 @@
             this.dgvChiTietPhieuNhap.EnableHeadersVisualStyles = false;
             this.dgvChiTietPhieuNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.dgvChiTietPhieuNhap.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.dgvChiTietPhieuNhap.Location = new System.Drawing.Point(758, 378);
+            this.dgvChiTietPhieuNhap.Location = new System.Drawing.Point(536, 378);
             this.dgvChiTietPhieuNhap.Name = "dgvChiTietPhieuNhap";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
@@ -167,7 +173,7 @@
             this.dgvChiTietPhieuNhap.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvChiTietPhieuNhap.RowTemplate.Height = 28;
             this.dgvChiTietPhieuNhap.SelectedIndex = -1;
-            this.dgvChiTietPhieuNhap.Size = new System.Drawing.Size(523, 324);
+            this.dgvChiTietPhieuNhap.Size = new System.Drawing.Size(543, 375);
             this.dgvChiTietPhieuNhap.StripeOddColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.dgvChiTietPhieuNhap.TabIndex = 14;
             this.dgvChiTietPhieuNhap.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.ChondongDgvCTPN);
@@ -179,7 +185,7 @@
             this.cboMaHH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cboMaHH.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.cboMaHH.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.cboMaHH.Location = new System.Drawing.Point(1033, 116);
+            this.cboMaHH.Location = new System.Drawing.Point(831, 98);
             this.cboMaHH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboMaHH.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboMaHH.Name = "cboMaHH";
@@ -194,7 +200,7 @@
             // 
             this.txtChietKhau.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtChietKhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtChietKhau.Location = new System.Drawing.Point(1033, 294);
+            this.txtChietKhau.Location = new System.Drawing.Point(831, 276);
             this.txtChietKhau.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtChietKhau.MinimumSize = new System.Drawing.Size(1, 16);
             this.txtChietKhau.Name = "txtChietKhau";
@@ -210,7 +216,7 @@
             this.uiLabel12.BackColor = System.Drawing.Color.Transparent;
             this.uiLabel12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiLabel12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel12.Location = new System.Drawing.Point(841, 302);
+            this.uiLabel12.Location = new System.Drawing.Point(639, 284);
             this.uiLabel12.Name = "uiLabel12";
             this.uiLabel12.Size = new System.Drawing.Size(194, 34);
             this.uiLabel12.TabIndex = 16;
@@ -221,7 +227,7 @@
             this.uiLabel8.BackColor = System.Drawing.Color.Transparent;
             this.uiLabel8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiLabel8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel8.Location = new System.Drawing.Point(802, 64);
+            this.uiLabel8.Location = new System.Drawing.Point(600, 46);
             this.uiLabel8.Name = "uiLabel8";
             this.uiLabel8.Size = new System.Drawing.Size(184, 34);
             this.uiLabel8.TabIndex = 12;
@@ -269,7 +275,7 @@
             this.dgvPhieuNhap.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvPhieuNhap.RowTemplate.Height = 28;
             this.dgvPhieuNhap.SelectedIndex = -1;
-            this.dgvPhieuNhap.Size = new System.Drawing.Size(553, 227);
+            this.dgvPhieuNhap.Size = new System.Drawing.Size(482, 278);
             this.dgvPhieuNhap.StripeOddColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
             this.dgvPhieuNhap.TabIndex = 13;
             this.dgvPhieuNhap.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.ChondongdgvPhieuNhap);
@@ -278,7 +284,7 @@
             // 
             this.txtSoLuong.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtSoLuong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtSoLuong.Location = new System.Drawing.Point(1033, 176);
+            this.txtSoLuong.Location = new System.Drawing.Point(831, 158);
             this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtSoLuong.MinimumSize = new System.Drawing.Size(1, 16);
             this.txtSoLuong.Name = "txtSoLuong";
@@ -294,7 +300,7 @@
             this.uiLabel7.BackColor = System.Drawing.Color.Transparent;
             this.uiLabel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiLabel7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel7.Location = new System.Drawing.Point(90, 418);
+            this.uiLabel7.Location = new System.Drawing.Point(19, 416);
             this.uiLabel7.Name = "uiLabel7";
             this.uiLabel7.Size = new System.Drawing.Size(184, 34);
             this.uiLabel7.TabIndex = 12;
@@ -304,7 +310,7 @@
             // 
             this.txtDonGia.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtDonGia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtDonGia.Location = new System.Drawing.Point(1033, 234);
+            this.txtDonGia.Location = new System.Drawing.Point(831, 216);
             this.txtDonGia.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDonGia.MinimumSize = new System.Drawing.Size(1, 16);
             this.txtDonGia.Name = "txtDonGia";
@@ -320,7 +326,7 @@
             this.uiLabel6.BackColor = System.Drawing.Color.Transparent;
             this.uiLabel6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiLabel6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel6.Location = new System.Drawing.Point(90, 355);
+            this.uiLabel6.Location = new System.Drawing.Point(19, 353);
             this.uiLabel6.Name = "uiLabel6";
             this.uiLabel6.Size = new System.Drawing.Size(184, 34);
             this.uiLabel6.TabIndex = 11;
@@ -331,7 +337,7 @@
             this.uiLabel5.BackColor = System.Drawing.Color.Transparent;
             this.uiLabel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel5.Location = new System.Drawing.Point(90, 296);
+            this.uiLabel5.Location = new System.Drawing.Point(19, 294);
             this.uiLabel5.Name = "uiLabel5";
             this.uiLabel5.Size = new System.Drawing.Size(184, 34);
             this.uiLabel5.TabIndex = 10;
@@ -341,7 +347,7 @@
             // 
             this.txtMaPN2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMaPN2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtMaPN2.Location = new System.Drawing.Point(1033, 56);
+            this.txtMaPN2.Location = new System.Drawing.Point(831, 38);
             this.txtMaPN2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMaPN2.MinimumSize = new System.Drawing.Size(1, 16);
             this.txtMaPN2.Name = "txtMaPN2";
@@ -357,7 +363,7 @@
             this.uiLabel4.BackColor = System.Drawing.Color.Transparent;
             this.uiLabel4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel4.Location = new System.Drawing.Point(90, 236);
+            this.uiLabel4.Location = new System.Drawing.Point(19, 234);
             this.uiLabel4.Name = "uiLabel4";
             this.uiLabel4.Size = new System.Drawing.Size(184, 34);
             this.uiLabel4.TabIndex = 9;
@@ -368,7 +374,7 @@
             this.uiLabel3.BackColor = System.Drawing.Color.Transparent;
             this.uiLabel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel3.Location = new System.Drawing.Point(90, 177);
+            this.uiLabel3.Location = new System.Drawing.Point(19, 175);
             this.uiLabel3.Name = "uiLabel3";
             this.uiLabel3.Size = new System.Drawing.Size(184, 34);
             this.uiLabel3.TabIndex = 8;
@@ -379,7 +385,7 @@
             this.uiLabel2.BackColor = System.Drawing.Color.Transparent;
             this.uiLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel2.Location = new System.Drawing.Point(90, 116);
+            this.uiLabel2.Location = new System.Drawing.Point(19, 114);
             this.uiLabel2.Name = "uiLabel2";
             this.uiLabel2.Size = new System.Drawing.Size(199, 34);
             this.uiLabel2.TabIndex = 7;
@@ -390,7 +396,7 @@
             this.uiLabel11.BackColor = System.Drawing.Color.Transparent;
             this.uiLabel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel11.Location = new System.Drawing.Point(865, 244);
+            this.uiLabel11.Location = new System.Drawing.Point(663, 226);
             this.uiLabel11.Name = "uiLabel11";
             this.uiLabel11.Size = new System.Drawing.Size(108, 34);
             this.uiLabel11.TabIndex = 15;
@@ -401,7 +407,7 @@
             this.uiLabel1.BackColor = System.Drawing.Color.Transparent;
             this.uiLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel1.Location = new System.Drawing.Point(90, 58);
+            this.uiLabel1.Location = new System.Drawing.Point(19, 56);
             this.uiLabel1.Name = "uiLabel1";
             this.uiLabel1.Size = new System.Drawing.Size(184, 34);
             this.uiLabel1.TabIndex = 6;
@@ -412,7 +418,7 @@
             this.uiLabel10.BackColor = System.Drawing.Color.Transparent;
             this.uiLabel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiLabel10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel10.Location = new System.Drawing.Point(854, 184);
+            this.uiLabel10.Location = new System.Drawing.Point(652, 166);
             this.uiLabel10.Name = "uiLabel10";
             this.uiLabel10.Size = new System.Drawing.Size(132, 34);
             this.uiLabel10.TabIndex = 14;
@@ -422,7 +428,7 @@
             // 
             this.txtTongphaitra.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtTongphaitra.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtTongphaitra.Location = new System.Drawing.Point(329, 406);
+            this.txtTongphaitra.Location = new System.Drawing.Point(258, 404);
             this.txtTongphaitra.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtTongphaitra.MinimumSize = new System.Drawing.Size(1, 16);
             this.txtTongphaitra.Name = "txtTongphaitra";
@@ -438,7 +444,7 @@
             this.uiLabel9.BackColor = System.Drawing.Color.Transparent;
             this.uiLabel9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.uiLabel9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(48)))), ((int)(((byte)(48)))));
-            this.uiLabel9.Location = new System.Drawing.Point(827, 124);
+            this.uiLabel9.Location = new System.Drawing.Point(625, 106);
             this.uiLabel9.Name = "uiLabel9";
             this.uiLabel9.Size = new System.Drawing.Size(159, 34);
             this.uiLabel9.TabIndex = 13;
@@ -448,7 +454,7 @@
             // 
             this.txtLoaiHoaDon.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtLoaiHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtLoaiHoaDon.Location = new System.Drawing.Point(329, 346);
+            this.txtLoaiHoaDon.Location = new System.Drawing.Point(258, 344);
             this.txtLoaiHoaDon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtLoaiHoaDon.MinimumSize = new System.Drawing.Size(1, 16);
             this.txtLoaiHoaDon.Name = "txtLoaiHoaDon";
@@ -463,7 +469,7 @@
             // 
             this.NgayNhap.FillColor = System.Drawing.Color.White;
             this.NgayNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.NgayNhap.Location = new System.Drawing.Point(329, 228);
+            this.NgayNhap.Location = new System.Drawing.Point(258, 226);
             this.NgayNhap.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NgayNhap.MaxLength = 10;
             this.NgayNhap.MinimumSize = new System.Drawing.Size(63, 0);
@@ -483,7 +489,7 @@
             // 
             this.txtMaChungtu.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMaChungtu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtMaChungtu.Location = new System.Drawing.Point(329, 286);
+            this.txtMaChungtu.Location = new System.Drawing.Point(258, 284);
             this.txtMaChungtu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMaChungtu.MinimumSize = new System.Drawing.Size(1, 16);
             this.txtMaChungtu.Name = "txtMaChungtu";
@@ -501,7 +507,7 @@
             this.cboMaNCC.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.cboMaNCC.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
             this.cboMaNCC.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
-            this.cboMaNCC.Location = new System.Drawing.Point(329, 108);
+            this.cboMaNCC.Location = new System.Drawing.Point(258, 106);
             this.cboMaNCC.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cboMaNCC.MinimumSize = new System.Drawing.Size(63, 0);
             this.cboMaNCC.Name = "cboMaNCC";
@@ -516,7 +522,7 @@
             // 
             this.txtMaNV.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMaNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtMaNV.Location = new System.Drawing.Point(329, 168);
+            this.txtMaNV.Location = new System.Drawing.Point(258, 166);
             this.txtMaNV.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMaNV.MinimumSize = new System.Drawing.Size(1, 16);
             this.txtMaNV.Name = "txtMaNV";
@@ -531,7 +537,7 @@
             // 
             this.txtMaPN1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtMaPN1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtMaPN1.Location = new System.Drawing.Point(329, 48);
+            this.txtMaPN1.Location = new System.Drawing.Point(258, 46);
             this.txtMaPN1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtMaPN1.MinimumSize = new System.Drawing.Size(1, 16);
             this.txtMaPN1.Name = "txtMaPN1";
@@ -542,11 +548,50 @@
             this.txtMaPN1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.txtMaPN1.Watermark = "";
             // 
+            // cboMaPN
+            // 
+            this.cboMaPN.DataSource = null;
+            this.cboMaPN.FillColor = System.Drawing.Color.White;
+            this.cboMaPN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.cboMaPN.ItemHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(200)))), ((int)(((byte)(255)))));
+            this.cboMaPN.ItemSelectForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(243)))), ((int)(((byte)(255)))));
+            this.cboMaPN.Location = new System.Drawing.Point(1152, 97);
+            this.cboMaPN.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cboMaPN.MinimumSize = new System.Drawing.Size(63, 0);
+            this.cboMaPN.Name = "cboMaPN";
+            this.cboMaPN.Padding = new System.Windows.Forms.Padding(0, 0, 30, 2);
+            this.cboMaPN.Size = new System.Drawing.Size(179, 43);
+            this.cboMaPN.SymbolSize = 24;
+            this.cboMaPN.TabIndex = 22;
+            this.cboMaPN.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+            this.cboMaPN.Watermark = "";
+            // 
+            // BtnInPhieuNhap
+            // 
+            this.BtnInPhieuNhap.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnInPhieuNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.BtnInPhieuNhap.Location = new System.Drawing.Point(1152, 158);
+            this.BtnInPhieuNhap.MinimumSize = new System.Drawing.Size(1, 1);
+            this.BtnInPhieuNhap.Name = "BtnInPhieuNhap";
+            this.BtnInPhieuNhap.Size = new System.Drawing.Size(179, 45);
+            this.BtnInPhieuNhap.TabIndex = 23;
+            this.BtnInPhieuNhap.Text = "In phiếu nhập";
+            this.BtnInPhieuNhap.TipsFont = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.BtnInPhieuNhap.Click += new System.EventHandler(this.BtnInPhieuNhap_Click);
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Location = new System.Drawing.Point(1103, 217);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(387, 537);
+            this.reportViewer1.TabIndex = 24;
+            // 
             // FPhieuNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1308, 726);
+            this.ClientSize = new System.Drawing.Size(1501, 765);
             this.Controls.Add(this.uiGroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
@@ -591,5 +636,8 @@
         private Sunny.UI.UITextBox txtDonGia;
         private Sunny.UI.UITextBox txtMaPN2;
         private Sunny.UI.UIButton btnThemPhieuNhap;
+        private Sunny.UI.UIComboBox cboMaPN;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Sunny.UI.UIButton BtnInPhieuNhap;
     }
 }
