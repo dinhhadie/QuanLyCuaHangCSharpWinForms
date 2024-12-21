@@ -810,6 +810,7 @@ namespace QUANLYCUAHANG
             if (i == 0)
             {
                 uiSplitContainer1.Panel1.Controls.Add(UCNH);
+                UCNH.Dock = DockStyle.Fill;
             } 
                 
         }
